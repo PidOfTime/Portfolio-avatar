@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+  user-select: none;
+}
+
+:root {
+  --bg: #fff;
+  --logo: #333;
+  --logo-span: #061494;
+  --text: #333;
+  --p-text: #6e6e6e;
+  --btn: #fefeff;
+  --btnBG: #061494;
+  --name: linear-gradient(90deg, #6a0e72, #099cfd, #ff0984);
+  --theme: #e6e6e6;
+  --themeBG: #1f1f1f;
+}
+
+.dark {
+  --bg: #000000;
+  --themeBG: #e6e6e6;
+  --theme: #1f1f1f;
+  --logo: #eeeeee;
+  --logo-span: #08c5ff;
+  --btnBG: #07c9cf;
+  --p-text: #c7c7c7;
+  --text: #ffffff;
+  --name: linear-gradient(45deg, #ff4c05, #09e1fd, #ff09a1);
+}
+
+a {
+  text-decoration: none;
+}
+
+.bio {
+  width: 400px;
+  word-wrap: wrap;
+}
+@media (width < 1000px) {
+  .bio {
+    width: 300px;
+  }
+}
+
+.colors {
+  position: absolute;
+  right: 0;
+  max-width: 600px;
+  top: 100px;
+  animation: animateColor 8s ease-in-out infinite;
+}
+@keyframes animateColor {
+  50% {
+    transform: translateY(50px);
+  }
+}
+
+.men {
+  position: absolute;
+  bottom: 0;
+  right: 50px;
+  max-height: 90vh;
+  height: 550px;
+  animation: avatar 8s ease-in-out infinite;
+}
+@keyframes avatar {
+  50% {
+    transform: translateX(50px);
+  }
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  padding: 100px;
+  background: var(--bg);
+  transition: 0.5s;
+}
+
+.dash {
+  opacity: 1;
+  animation: sho-dash 1.2s linear infinite;
+}
+@keyframes sho-dash {
+  50% {
+    opacity: 0;
+  }
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo {
+  color: var(--logo);
+  font-size: 2rem;
+  transition: 0.5s;
+  font-weight: 700;
+}
+header .logo span:not(.dash) {
+  color: var(--logo-span);
+}
+header ul {
+  display: flex;
+  gap: 40px;
+}
+header ul li {
+  list-style: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+header ul li a {
+  color: var(--logo);
+}
+
+.content {
+  position: relative;
+  max-width: 700px;
+  z-index: 10;
+}
+.content h3,
+.content h2,
+.content p {
+  color: var(--text);
+  transition: 0.5s;
+}
+.content h3 {
+  font-size: 2em;
+  font-weight: 200;
+}
+.content h2 {
+  font-size: 5.5rem;
+  font-weight: 700;
+}
+.content h2 span {
+  background: var(--name);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.content p {
+  font-size: 1rem;
+  color: var(--p-text);
+  margin: 10px 0;
+}
+.content button {
+  position: relative;
+  background: var(--btnBG);
+  color: var(--btn);
+  outline: none;
+  border: none;
+  padding: 15px 35px;
+  font-size: 1.1rem;
+  letter-spacing: 0.1ch;
+  margin-right: 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.content button.chat {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--btnBG);
+}
+
+.sci {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  gap: 20px;
+}
+.sci li {
+  list-style: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  background: var(--btnBG);
+  transition: 0.5s;
+}
+.sci li a {
+  color: var(--btn);
+}
+.sci li:hover {
+  border: 1px solid var(--btnBG);
+  background: transparent;
+}
+.sci li:hover a {
+  color: var(--btnBG);
+}
+
+.theme {
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  transform: translateX(-50%);
+  height: 60px;
+  width: 60px;
+  background: var(--themeBG);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 500;
+  font-size: 1.2em;
+}
+.theme a {
+  color: var(--theme);
+  text-transform: uppercase;
+}
+.theme:active {
+  scale: 0.9;
+}
+
+.light #dark {
+  display: none;
+}
+
+.dark #light {
+  display: none;
+}
