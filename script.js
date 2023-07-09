@@ -6,7 +6,7 @@ let lightBtn = document.querySelector('#light')
 // ======= Typed Effect=======
 
 let typingText = new Typed('#text', {
-    strings: ["Vxrcel", "Designer", "Pulse", "Gamer", "Wudan"],
+    strings: ["Pid", "Designer", "Web Dev", "Gamer", "Still learning"],
     loop: true,
     typeSpeed: 100,
     backSpeed: 50,
